@@ -1,0 +1,214 @@
+
+body, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 20px; 
+}
+html{
+    scroll-behavior: smooth;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-areas: 
+        "nav nav nav nav"
+        ". . . ."
+        "image text text text"
+        "papers papers papers papers"
+        "papers papers papers papers"
+        "experience experience experience experience"
+        "hobbies hobbies hobbies hobbies"
+        "images images images images"
+        "images images images images"
+        "blogs blogs blogs blogs";
+    max-width:1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.navbar {
+    grid-area: nav;
+    background-color: #333;
+    padding: 20px;
+    color: white;
+}
+.navbar div{
+    display: inline-block;
+    padding-right: 80px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    display: inline-block;
+}
+
+.profile_img {
+    grid-area: image;
+    max-width: 100%;
+    height: auto;
+}
+
+.about_me {
+    grid-area: text;
+    text-align: left;
+    padding: 20px;
+    font-size: 22px;
+}
+
+.papers {
+    grid-area: papers;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 10px;
+    background-color: #c2d6d6;
+}
+
+.papers h2 {
+    grid-column: span 3;
+    text-align: center;
+    padding: 20px;
+    background-color: #b8b894;
+}
+
+.img {
+    max-width: 100%;
+    padding: auto;
+    margin: auto;
+}
+
+
+#experience {
+    grid-area: experience;
+    display:block;
+    padding: 20px;
+    background-color: white;
+
+}
+
+#experience h2{
+    text-align: center;
+    background-color: #00264d;
+    margin: auto;
+    padding: 20px;
+    color: white;
+}
+#experience ul {
+    list-style-type: disc; 
+    margin-left: 20px; 
+}
+
+#experience li {
+    font-size: 22px; 
+    margin-bottom: 15px; 
+}
+
+
+
+#hobbies {
+    grid-area: hobbies;
+    background-color: #8cd9b3;
+}
+
+#hobbies h2{
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    background-color: cadetblue;
+}
+#hobbies div {
+    font-size: 22px; 
+    line-height: 1.5; 
+}
+
+#images {
+    grid-area: images;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: auto;
+    grid-gap: 10px;
+    background-color: #004d4d;
+}
+
+#images h2 {
+    grid-column: span 3;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    color: whitesmoke;
+}
+
+#images img {
+    max-width: 100%;
+    padding: auto;
+    margin: auto;
+}
+
+#blogs {
+    grid-area: blogs;
+    background-color: #b3f0ff;
+}
+
+#blogs h2{
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    background-color: #c1c1d7;
+}
+#blogs div{
+    font-size: 20px; 
+    line-height: 1.5; 
+}
+@media only screen and (max-width: 700px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "nav"
+            "image"
+            "text"
+            "papers"
+            "experience"
+            "hobbies"
+            "images"
+            "blogs";
+    }
+
+    .navbar a{
+        display: none;
+    }
+
+    .papers {
+        display: block;
+        text-align: center;
+    }
+    #papers h2{
+        grid-column: span 1;
+    }
+
+    .papers .img {
+        max-width: 100%;
+        display: inline-block;
+        margin: 10px;
+    }
+
+    #images {
+        display: block;
+        text-align: center;
+    }
+    #images h2 {
+        grid-column: span 1; 
+    }
+
+    #images img {
+        max-width: 100%;
+        display:inline-block;
+        margin: 10px;
+    }
+}
